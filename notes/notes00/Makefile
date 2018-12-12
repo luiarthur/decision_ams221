@@ -6,8 +6,8 @@ all: build
 
 build:
 	R --slave -e "rmarkdown::render('$(FNAME).Rmd')"
-	# rm *.html
-	# mv $(FNAME).md README.md
+	rm *.html
+	mv $(FNAME).md README.md
 
 clean:
 	rm -f *.html *.md

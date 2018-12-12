@@ -20,6 +20,6 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
-Preview this: $\\alpha + \\beta + \\bk{1}$.
+Preview this: *α* + *β*.
 
 **This should be in bold**.

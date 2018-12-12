@@ -1,6 +1,8 @@
-.PHONY: purge clean build
+.PHONY: purge clean build all
 
 FNAME = notes00.Rmd
+
+all: build
 
 build:
 	R --slave -e "rmarkdown::render('$(FNAME)')"

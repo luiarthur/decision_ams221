@@ -20,8 +20,8 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
-Preview this: *α* + *β*.
+Preview this: ![\\alpha + \\beta](https://latex.codecogs.com/png.latex?%5Calpha%20%2B%20%5Cbeta "\alpha + \beta").
 
-Expectaion: E(*X*) = ${\\left\[\\frac{1}{2}\\right\]}$.
+Expectaion: ![{ \\text{E} }(X)](https://latex.codecogs.com/png.latex?%7B%20%5Ctext%7BE%7D%20%7D%28X%29 "{ \text{E} }(X)") = ![{\\left\[\\frac{1}{2}\\right\]}](https://latex.codecogs.com/png.latex?%7B%5Cleft%5B%5Cfrac%7B1%7D%7B2%7D%5Cright%5D%7D "{\left[\frac{1}{2}\right]}").
 
 **This should be in bold**.

@@ -1,7 +1,25 @@
 ---
 title: "R Notebook"
-output: rmarkdown::github_document
+# output: rmarkdown::github_document
+output: html_document
 ---
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\p}[1]{\left(#1\right)}
+\newcommand{\bk}[1]{\left[#1\right]}
+\newcommand{\bc}[1]{ \left\{#1\right\} }
+\newcommand{\abs}[1]{ \left|#1\right| }
+\newcommand{\mat}{ \begin{pmatrix} }
+\newcommand{\tam}{ \end{pmatrix} }
+\newcommand{\suml}{ \sum_{i=1}^n }
+\newcommand{\prodl}{ \prod_{i=1}^n }
+\newcommand{\ds}{ \displaystyle }
+\newcommand{\df}[2]{ \frac{d#1}{d#2} }
+\newcommand{\ddf}[2]{ \frac{d^2#1}{d{#2}^2} }
+\newcommand{\pd}[2]{ \frac{\partial#1}{\partial#2} }
+\newcommand{\pdd}[2]{\frac{\partial^2#1}{\partial{#2}^2} }
+\newcommand{\N}{ \mathcal{N} }
+\newcommand{\E}{ \text{E} }
 
 Hi.
 
@@ -29,6 +47,7 @@ the output of the chunk when it was last run in the editor is displayed.
 
 Preview this: $\alpha + \beta$.
 
+Expectaion: $\E(X)$ = $\bk{\frac{1}{2}}$.
 
 **This should be in bold**.
 

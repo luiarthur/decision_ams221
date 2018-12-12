@@ -1,14 +1,14 @@
 .PHONY: purge clean build all
 
-FNAME = notes00.Rmd
+FNAME = notes00
 
 all: build
 
 build:
-	R --slave -e "rmarkdown::render('$(FNAME)')"
-	rm *.html
-	mv *.md README.md
+	R --slave -e "rmarkdown::render('$(FNAME).Rmd')"
+	# rm *.html
+	# mv $(FNAME).md README.md
 
 clean:
 	rm -f *.html *.md
-	rm -rf *_files
+	rm -rf $(FNAME)_files

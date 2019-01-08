@@ -1,0 +1,107 @@
+---
+title: "Bayesian Decision Theory"
+# output:
+#   github_document:
+#     pandoc_args: --webtex
+output: pdf_document
+---
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\p}[1]{\left(#1\right)}
+\newcommand{\bk}[1]{\left[#1\right]}
+\newcommand{\bc}[1]{ \left\{#1\right\} }
+\newcommand{\abs}[1]{ \left|#1\right| }
+\newcommand{\mat}{ \begin{pmatrix} }
+\newcommand{\tam}{ \end{pmatrix} }
+\newcommand{\suml}{ \sum_{i=1}^n }
+\newcommand{\prodl}{ \prod_{i=1}^n }
+\newcommand{\ds}{ \displaystyle }
+\newcommand{\df}[2]{ \frac{d#1}{d#2} }
+\newcommand{\ddf}[2]{ \frac{d^2#1}{d{#2}^2} }
+\newcommand{\pd}[2]{ \frac{\partial#1}{\partial#2} }
+\newcommand{\pdd}[2]{\frac{\partial^2#1}{\partial{#2}^2} }
+\newcommand{\N}{ \mathcal{N} }
+\newcommand{\E}{ \text{E} }
+
+# Intro
+
+- Formal framework for decision making under uncertainty.
+- Want to establish an *optimal* course of actions in a *probabilistic* setting.
+
+# Examples:
+
+## Obtain an optimal decision
+An oil company has to decide what to do with a promising field.
+
+$\theta = \begin{cases}
+\theta_1 ~~ \text{these is oil}\\
+\theta_2 ~~ \text{these is no oil}\\
+\end{cases}$
+
+The consequences are to drill if $\theta_1$, otherwise sell the field.
+
+For the cost of $C$ million ollars, the company can get a survey of the field.
+
+The outcome $X = \begin{cases}
+\text{presece of a certain formation} \\
+\text{absence of a certain formation} \\
+\end{cases}$
+
+INSERT STUFF HERE ...
+
+### Inference 
+Suppose you have a likelihood $p(x\mid \theta)$ and a prior $\pi(\theta)$.
+Estimate $\theta$, where $\theta \in \Theta$ set of $\theta$'s and $a \in A$
+set of actions.
+
+\begin{align*}
+L_1(\theta,a) &= (a-\theta)^2 \\
+L_2(\theta,a) &= (a-\theta)^T C (a-\theta)\\
+L_3(\theta,a) &= \abs{a-\theta} \\
+\end{align*}
+
+Minimize $\E(L(\theta, a) \mid X) = \int L(\theta, a) p(\theta\mid X) d\theta$.
+
+### Hypothesis Testing - More broadly, model selection
+
+\begin{align*}
+H_0: & ~ \theta \in \Theta_0\\
+H_1: & ~ \theta \in \Theta_1\\
+\end{align*}
+
+The decisions are:
+
+\begin{align*}
+a_0 & ~ \text{accept $H_0$} \\
+a_1 & ~ \text{accept $H_1$} \\
+\end{align*}
+
+$p(x\mid\theta)$
+
+$$L(\theta, a) = \begin{cases}
+0 & ~ \text{if } \theta \in \Theta_i \\
+k_i & ~ \text{if } \theta \notin \Theta_i
+\end{cases}$$
+
+## Optimal Design - How to obtain the max amount of info with the min amount of effort
+
+Network of NOAA stations. There is a need to reduce to half the stationsdue to
+budget constraints. Which ones should we take out?
+
+Let $d = \bc{0, 0, 1, 1, \dots, 0}$, of length $N$. 0 for shut down station $i$, 1
+for keep station $i$ on. Space of actiosn is of size $2^N$. $a = \bc{d}$.
+
+$y \sim \N(X\beta, \sigma^2 v(\lambda))$ gives predictions of pollutants in the
+network. From this, I can produce predictions $\hat{y}_i(y_d)$, location $i$
+using data at design $d$.
+
+Utility $u(d, y) = K \sum_{i \in d^c} \mathbf{1}\bc{y_i \in \hat y_i(y_d) \pm
+\delta} - \sum_{i \in d} c_i - C$. $K$ chosen by econometricians.
+
+## Sequential Design
+$H_0: \theta \in \Theta_0$, $H_1: \theta \in \Theta_1$.
+Three actions:
+
+- $a_1$: Obtain new sample
+- $a_2$: $H_0$
+- $a_3$: $H_1$

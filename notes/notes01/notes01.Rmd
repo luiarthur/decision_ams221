@@ -40,10 +40,10 @@ $\theta = \begin{cases}
 
 The consequences are to drill if $\theta_1$, otherwise sell the field.
 
-For the cost of $C$ million ollars, the company can get a survey of the field.
+For the cost of $C$ million dollars, the company can get a survey of the field.
 
 The outcome $X = \begin{cases}
-\text{presece of a certain formation} \\
+\text{presence of a certain formation} \\
 \text{absence of a certain formation} \\
 \end{cases}$
 
@@ -64,7 +64,7 @@ Table: $\pi(\theta)$
 | $\theta \textbackslash a$ | $a_1$ | $a_2$ |
 |---|---|---|
 | $\theta_1$ | C $-$ 5000  | C $+$ 0 |
-| $\theta_2$ | C $+$ 20007 | C $-$ 500  |
+| $\theta_2$ | C $+$ 2000 | C $-$ 500  |
 Table: Loss function $\mathcal{L}(\theta, a) = -U(\theta, a)$
 
 
@@ -104,11 +104,11 @@ k_i & ~ \text{if } \theta \notin \Theta_i
 
 ## Optimal Design - How to obtain the max amount of info with the min amount of effort
 
-Network of NOAA stations. There is a need to reduce to half the stationsdue to
+Network of NOAA stations. There is a need to reduce to half the stations due to
 budget constraints. Which ones should we take out?
 
 Let $d = \bc{0, 0, 1, 1, \dots, 0}$, of length $N$. 0 for shut down station $i$, 1
-for keep station $i$ on. Space of actiosn is of size $2^N$. $a = \bc{d}$.
+for keep station $i$ on. Space of actions is of size $2^N$. $a = \bc{d}$.
 
 $y \sim \N(X\beta, \sigma^2 v(\lambda))$ gives predictions of pollutants in the
 network. From this, I can produce predictions $\hat{y}_i(y_d)$, location $i$
@@ -145,4 +145,4 @@ d. Statisticians produce
     - knowledge
         - purely objective role
     - solutions to problems
-        - involvement that accounst for context
+        - involvement that accounts for context

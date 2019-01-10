@@ -1,4 +1,4 @@
-.PHONY: clean preview all githubify publish
+.PHONY: clean preview all githubif
 
 FNAME = notes01
 
@@ -19,7 +19,3 @@ githubify:
 	rm -f *.html
 	mv $(FNAME).md README.md
 
-publish: githubify
-	git add .
-	git commit
-	git push

@@ -1,4 +1,4 @@
-.PHONY: clean preview all githubif
+.PHONY: clean preview all githubify
 
 FNAME = notes01
 

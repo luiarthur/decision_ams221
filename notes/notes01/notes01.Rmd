@@ -124,3 +124,25 @@ Three actions:
 - $a_1$: Obtain new sample
 - $a_2$: $H_0$
 - $a_3$: $H_1$
+
+## Statistical Controversies
+
+a. Judge an answer by
+    - what it says (Bayesian)
+        - This is the conditionality principle. Evidence from our experiment is taken at face value.
+    - how it was obtained
+        - We should consider all possible outcomes of the experiment.
+b. Probability lives
+    - in the world
+        - repeatability allows for measuring probabilities
+    - in the mind (Bayesian)
+        - probability is a construct that is context-dependent
+c. Learning requires
+    - models (statistics)
+        - easier to evaluate uncertainty
+    - algorithms (ML)
+d. Statisticians produce
+    - knowledge
+        - purely objective role
+    - solutions to problems
+        - involvement that accounst for context

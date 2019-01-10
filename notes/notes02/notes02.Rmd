@@ -31,7 +31,7 @@ problem (dynamic programming).
 
 Refer to oil drilling example (in `notes01`).
 
-| $\theta \bs x$ | 0 | 1 |
+| $\theta$ \\ $x$ | 0 | 1 |
 |---|---|---|
 | $\theta_1$ | .2 | .8 |
 | $\theta_2$ | .7 | .3 |
@@ -48,7 +48,7 @@ The outcome $X = \begin{cases}
 \text{absence of a certain formation} \\
 \end{cases}$
 
-| $\theta \textbackslash a$ | $a_1$ (Drill) | $a_2$ (Sell) |
+| $\theta$ \\ $a$ | $a_1$ (Drill) | $a_2$ (Sell) |
 |---|---|---|
 | $\theta_1$ | $-$ 5000  | 0 |
 | $\theta_2$ | 2000 | $-$ 500  |

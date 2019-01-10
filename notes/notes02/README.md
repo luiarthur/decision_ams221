@@ -8,10 +8,10 @@ Decision trees provide a pictorial representation of a sequential decision probl
 
 Refer to oil drilling example (in `notes01`).
 
-| ![\\theta {\\textbackslash}x](https://latex.codecogs.com/png.latex?%5Ctheta%20%7B%5Ctextbackslash%7Dx "\theta {\textbackslash}x") | 0   | 1   |
-|-----------------------------------------------------------------------------------------------------------------------------------|-----|-----|
-| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                                         | .2  | .8  |
-| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                                         | .7  | .3  |
+| ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![x](https://latex.codecogs.com/png.latex?x "x") | 0   | 1   |
+|------------------------------------------------------------------------------------------------------------------------|-----|-----|
+| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | .2  | .8  |
+| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | .7  | .3  |
 
 | ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") | ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1") (oil) | ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2") (no oil) |
 |--------------------------------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
@@ -19,10 +19,10 @@ Refer to oil drilling example (in `notes01`).
 
 The outcome ![X = \\begin{cases} \\text{presence of a certain formation} \\\\ \\text{absence of a certain formation} \\\\ \\end{cases}](https://latex.codecogs.com/png.latex?X%20%3D%20%5Cbegin%7Bcases%7D%20%5Ctext%7Bpresence%20of%20a%20certain%20formation%7D%20%5C%5C%20%5Ctext%7Babsence%20of%20a%20certain%20formation%7D%20%5C%5C%20%5Cend%7Bcases%7D "X = \begin{cases} \text{presence of a certain formation} \\ \text{absence of a certain formation} \\ \end{cases}")
 
-| ![\\theta \\textbackslash a](https://latex.codecogs.com/png.latex?%5Ctheta%20%5Ctextbackslash%20a "\theta \textbackslash a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1") (Drill) | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2") (Sell) |
-|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------|
-| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                                    | ![-](https://latex.codecogs.com/png.latex?- "-") 5000           | 0                                                              |
-| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                                    | 2000                                                            | ![-](https://latex.codecogs.com/png.latex?- "-") 500           |
+| ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![a](https://latex.codecogs.com/png.latex?a "a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1") (Drill) | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2") (Sell) |
+|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------|
+| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | ![-](https://latex.codecogs.com/png.latex?- "-") 5000           | 0                                                              |
+| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | 2000                                                            | ![-](https://latex.codecogs.com/png.latex?- "-") 500           |
 
 A decision tree has two types of nodes.
 

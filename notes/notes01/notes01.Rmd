@@ -3,7 +3,7 @@ title: "Bayesian Decision Theory"
 # output:
 #   github_document:
 #     pandoc_args: --webtex
-output: pdf_document
+# output: pdf_document
 ---
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}

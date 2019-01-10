@@ -1,10 +1,10 @@
-.PHONY: purge clean build all
+.PHONY: clean preview all githubify publish
 
 FNAME = notes01
 
-all: build
+all: preview
 
-build:
+preview:
 	#R --slave -e "rmarkdown::render('$(FNAME).Rmd')"
 	R --slave -e "rmarkdown::render('$(FNAME).Rmd', rmarkdown::pdf_document())"
 	rm -f *.html
@@ -19,3 +19,7 @@ githubify:
 	rm -f *.html
 	mv $(FNAME).md README.md
 
+publish: githubify
+	git add .
+	git commit
+	git push

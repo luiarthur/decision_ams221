@@ -47,7 +47,26 @@ The outcome $X = \begin{cases}
 \text{absence of a certain formation} \\
 \end{cases}$
 
-INSERT STUFF HERE ...
+
+| $\theta \textbackslash x$ | 0 | 1 |
+|---|---|---|
+| $\theta_1$ | .2 | .8 |
+| $\theta_2$ | .7 | .3 |
+Table: $P(X\mid\theta)$
+
+
+| $\theta$ | $\theta_1$ | $\theta_2$ |
+|---|---|---|
+|  | .6 | .4 |
+Table: $\pi(\theta)$
+
+
+| $\theta \textbackslash a$ | $a_1$ | $a_2$ |
+|---|---|---|
+| $\theta_1$ | C $-$ 5000  | C $+$ 0 |
+| $\theta_2$ | C $+$ 20007 | C $-$ 500  |
+Table: Loss function $\mathcal{L}(\theta, a) = -U(\theta, a)$
+
 
 ### Inference 
 Suppose you have a likelihood $p(x\mid \theta)$ and a prior $\pi(\theta)$.

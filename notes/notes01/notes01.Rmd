@@ -48,7 +48,7 @@ The outcome $X = \begin{cases}
 \end{cases}$
 
 
-| $\theta \textbackslash x$ | 0 | 1 |
+| $\theta$ \\ $x$ | 0 | 1 |
 |---|---|---|
 | $\theta_1$ | .2 | .8 |
 | $\theta_2$ | .7 | .3 |
@@ -61,7 +61,7 @@ Table: $P(X\mid\theta)$
 Table: $\pi(\theta)$
 
 
-| $\theta \textbackslash a$ | $a_1$ | $a_2$ |
+| $\theta$ \\ $a$ | $a_1$ | $a_2$ |
 |---|---|---|
 | $\theta_1$ | C $-$ 5000  | C $+$ 0 |
 | $\theta_2$ | C $+$ 2000 | C $-$ 500  |

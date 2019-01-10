@@ -22,7 +22,6 @@ title: "Bayesian Decision Theory - Decision Trees, Coherence & Dynamic Programin
 \newcommand{\pdd}[2]{\frac{\partial^2#1}{\partial{#2}^2} }
 \newcommand{\N}{ \mathcal{N} }
 \newcommand{\E}{ \text{E} }
-\newcommand{\bs}{\textbackslash}
 
 # Decision Trees
 

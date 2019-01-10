@@ -19,23 +19,23 @@ An oil company has to decide what to do with a promising field.
 
 The consequences are to drill if ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1"), otherwise sell the field.
 
-For the cost of ![C](https://latex.codecogs.com/png.latex?C "C") million ollars, the company can get a survey of the field.
+For the cost of ![C](https://latex.codecogs.com/png.latex?C "C") million dollars, the company can get a survey of the field.
 
-The outcome ![X = \\begin{cases} \\text{presece of a certain formation} \\\\ \\text{absence of a certain formation} \\\\ \\end{cases}](https://latex.codecogs.com/png.latex?X%20%3D%20%5Cbegin%7Bcases%7D%20%5Ctext%7Bpresece%20of%20a%20certain%20formation%7D%20%5C%5C%20%5Ctext%7Babsence%20of%20a%20certain%20formation%7D%20%5C%5C%20%5Cend%7Bcases%7D "X = \begin{cases} \text{presece of a certain formation} \\ \text{absence of a certain formation} \\ \end{cases}")
+The outcome ![X = \\begin{cases} \\text{presence of a certain formation} \\\\ \\text{absence of a certain formation} \\\\ \\end{cases}](https://latex.codecogs.com/png.latex?X%20%3D%20%5Cbegin%7Bcases%7D%20%5Ctext%7Bpresence%20of%20a%20certain%20formation%7D%20%5C%5C%20%5Ctext%7Babsence%20of%20a%20certain%20formation%7D%20%5C%5C%20%5Cend%7Bcases%7D "X = \begin{cases} \text{presence of a certain formation} \\ \text{absence of a certain formation} \\ \end{cases}")
 
-| ![\\theta \\textbackslash x](https://latex.codecogs.com/png.latex?%5Ctheta%20%5Ctextbackslash%20x "\theta \textbackslash x") | 0   | 1   |
-|------------------------------------------------------------------------------------------------------------------------------|-----|-----|
-| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                                    | .2  | .8  |
-| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                                    | .7  | .3  |
+| ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![x](https://latex.codecogs.com/png.latex?x "x") | 0   | 1   |
+|------------------------------------------------------------------------------------------------------------------------|-----|-----|
+| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | .2  | .8  |
+| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | .7  | .3  |
 
 | ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") | ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1") | ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2") |
 |--------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
 |                                                                    | .6                                                                        | .4                                                                        |
 
-| ![\\theta \\textbackslash a](https://latex.codecogs.com/png.latex?%5Ctheta%20%5Ctextbackslash%20a "\theta \textbackslash a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1")    | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2") |
-|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------------------------------------|
-| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                                    | C ![-](https://latex.codecogs.com/png.latex?- "-") 5000    | C ![+](https://latex.codecogs.com/png.latex?%2B "+") 0  |
-| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                                    | C ![+](https://latex.codecogs.com/png.latex?%2B "+") 20007 | C ![-](https://latex.codecogs.com/png.latex?- "-") 500  |
+| ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![a](https://latex.codecogs.com/png.latex?a "a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1")   | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2") |
+|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------|
+| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | C ![-](https://latex.codecogs.com/png.latex?- "-") 5000   | C ![+](https://latex.codecogs.com/png.latex?%2B "+") 0  |
+| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | C ![+](https://latex.codecogs.com/png.latex?%2B "+") 2000 | C ![-](https://latex.codecogs.com/png.latex?- "-") 500  |
 
 ### Inference
 
@@ -60,9 +60,9 @@ k_i & ~ \text{if } \theta \notin \Theta_i
 Optimal Design - How to obtain the max amount of info with the min amount of effort
 -----------------------------------------------------------------------------------
 
-Network of NOAA stations. There is a need to reduce to half the stationsdue to budget constraints. Which ones should we take out?
+Network of NOAA stations. There is a need to reduce to half the stations due to budget constraints. Which ones should we take out?
 
-Let ![d = { \\left\\{0, 0, 1, 1, \\dots, 0\\right\\} }](https://latex.codecogs.com/png.latex?d%20%3D%20%7B%20%5Cleft%5C%7B0%2C%200%2C%201%2C%201%2C%20%5Cdots%2C%200%5Cright%5C%7D%20%7D "d = { \left\{0, 0, 1, 1, \dots, 0\right\} }"), of length ![N](https://latex.codecogs.com/png.latex?N "N"). 0 for shut down station ![i](https://latex.codecogs.com/png.latex?i "i"), 1 for keep station ![i](https://latex.codecogs.com/png.latex?i "i") on. Space of actiosn is of size ![2^N](https://latex.codecogs.com/png.latex?2%5EN "2^N"). ![a = { \\left\\{d\\right\\} }](https://latex.codecogs.com/png.latex?a%20%3D%20%7B%20%5Cleft%5C%7Bd%5Cright%5C%7D%20%7D "a = { \left\{d\right\} }").
+Let ![d = { \\left\\{0, 0, 1, 1, \\dots, 0\\right\\} }](https://latex.codecogs.com/png.latex?d%20%3D%20%7B%20%5Cleft%5C%7B0%2C%200%2C%201%2C%201%2C%20%5Cdots%2C%200%5Cright%5C%7D%20%7D "d = { \left\{0, 0, 1, 1, \dots, 0\right\} }"), of length ![N](https://latex.codecogs.com/png.latex?N "N"). 0 for shut down station ![i](https://latex.codecogs.com/png.latex?i "i"), 1 for keep station ![i](https://latex.codecogs.com/png.latex?i "i") on. Space of actions is of size ![2^N](https://latex.codecogs.com/png.latex?2%5EN "2^N"). ![a = { \\left\\{d\\right\\} }](https://latex.codecogs.com/png.latex?a%20%3D%20%7B%20%5Cleft%5C%7Bd%5Cright%5C%7D%20%7D "a = { \left\{d\right\} }").
 
 ![y \\sim { \\mathcal{N} }(X\\beta, \\sigma^2 v(\\lambda))](https://latex.codecogs.com/png.latex?y%20%5Csim%20%7B%20%5Cmathcal%7BN%7D%20%7D%28X%5Cbeta%2C%20%5Csigma%5E2%20v%28%5Clambda%29%29 "y \sim { \mathcal{N} }(X\beta, \sigma^2 v(\lambda))") gives predictions of pollutants in the network. From this, I can produce predictions ![\\hat{y}\_i(y\_d)](https://latex.codecogs.com/png.latex?%5Chat%7By%7D_i%28y_d%29 "\hat{y}_i(y_d)"), location ![i](https://latex.codecogs.com/png.latex?i "i") using data at design ![d](https://latex.codecogs.com/png.latex?d "d").
 
@@ -98,4 +98,4 @@ Statistical Controversies
     -   knowledge
         -   purely objective role
     -   solutions to problems
-        -   involvement that accounst for context
+        -   involvement that accounts for context

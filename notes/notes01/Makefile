@@ -15,7 +15,7 @@ clean:
 	rm -rf $(FNAME)_files
 
 githubify:
-	R --slave -e "rmarkdown::render('$(FNAME).Rmd', rmarkdown::github_document(pandoc_args='--webtex'))"
+	time R --slave -e "rmarkdown::render('$(FNAME).Rmd', rmarkdown::github_document(pandoc_args='--webtex'))"
 	rm -f *.html
 	mv $(FNAME).md README.md
 

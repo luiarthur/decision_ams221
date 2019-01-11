@@ -21,8 +21,8 @@ The outcome ![X = \\begin{cases} \\text{presence of a certain formation} \\\\ \\
 
 | ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![a](https://latex.codecogs.com/png.latex?a "a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1") (Drill) | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2") (Sell) |
 |------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------|
-| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | ![-](https://latex.codecogs.com/png.latex?- "-") 5000           | 0                                                              |
-| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | 2000                                                            | ![-](https://latex.codecogs.com/png.latex?- "-") 500           |
+| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | ![-5000](https://latex.codecogs.com/png.latex?-5000 "-5000")    | ![0](https://latex.codecogs.com/png.latex?0 "0")               |
+| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | ![2000](https://latex.codecogs.com/png.latex?2000 "2000")       | $ -500$                                                        |
 
 A decision tree has two types of nodes.
 

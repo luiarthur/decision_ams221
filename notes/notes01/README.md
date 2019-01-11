@@ -15,7 +15,7 @@ Obtain an optimal decision
 
 An oil company has to decide what to do with a promising field.
 
-![\\theta = \\begin{cases} \\theta\_1 ~~ \\text{these is oil}\\\\ \\theta\_2 ~~ \\text{these is no oil}\\\\ \\end{cases}](https://latex.codecogs.com/png.latex?%5Ctheta%20%3D%20%5Cbegin%7Bcases%7D%20%5Ctheta_1%20~~%20%5Ctext%7Bthese%20is%20oil%7D%5C%5C%20%5Ctheta_2%20~~%20%5Ctext%7Bthese%20is%20no%20oil%7D%5C%5C%20%5Cend%7Bcases%7D "\theta = \begin{cases} \theta_1 ~~ \text{these is oil}\\ \theta_2 ~~ \text{these is no oil}\\ \end{cases}")
+![\\theta = \\begin{cases} \\theta\_1 ~~ \\text{there is oil}\\\\ \\theta\_2 ~~ \\text{there is no oil}\\\\ \\end{cases}](https://latex.codecogs.com/png.latex?%5Ctheta%20%3D%20%5Cbegin%7Bcases%7D%20%5Ctheta_1%20~~%20%5Ctext%7Bthere%20is%20oil%7D%5C%5C%20%5Ctheta_2%20~~%20%5Ctext%7Bthere%20is%20no%20oil%7D%5C%5C%20%5Cend%7Bcases%7D "\theta = \begin{cases} \theta_1 ~~ \text{there is oil}\\ \theta_2 ~~ \text{there is no oil}\\ \end{cases}")
 
 The consequences are to drill if ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1"), otherwise sell the field.
 

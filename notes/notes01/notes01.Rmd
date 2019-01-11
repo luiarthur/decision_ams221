@@ -34,8 +34,8 @@ title: "Bayesian Decision Theory"
 An oil company has to decide what to do with a promising field.
 
 $\theta = \begin{cases}
-\theta_1 ~~ \text{these is oil}\\
-\theta_2 ~~ \text{these is no oil}\\
+\theta_1 ~~ \text{there is oil}\\
+\theta_2 ~~ \text{there is no oil}\\
 \end{cases}$
 
 The consequences are to drill if $\theta_1$, otherwise sell the field.

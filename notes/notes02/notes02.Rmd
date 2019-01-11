@@ -49,8 +49,8 @@ The outcome $X = \begin{cases}
 
 | $\theta$ \\ $a$ | $a_1$ (Drill) | $a_2$ (Sell) |
 |---|---|---|
-| $\theta_1$ | $-$ 5000  | 0 |
-| $\theta_2$ | 2000 | $-$ 500  |
+| $\theta_1$ | $-5000$  | $0$ |
+| $\theta_2$ |  $2000$  |$ -500$  |
 Table: Loss function $\mathcal{L}(\theta, a) = -U(\theta, a)$. $C > 0$ is a sampling cost.
 
 A decision tree has two types of nodes.

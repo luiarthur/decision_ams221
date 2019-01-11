@@ -63,9 +63,9 @@ Table: $\pi(\theta)$
 
 | $\theta$ \\ $a$ | $a_1$ | $a_2$ |
 |---|---|---|
-| $\theta_1$ | C $-$ 5000  | C $+$ 0 |
-| $\theta_2$ | C $+$ 2000 | C $-$ 500  |
-Table: Loss function $\mathcal{L}(\theta, a) = -U(\theta, a)$
+| $\theta_1$ | $C - 5000$ | $C + 0$  |
+| $\theta_2$ | $C + 2000$ | $C - 500$  |
+Table: Loss function $\mathcal{L}(\theta, a) = -U(\theta, a)$. Suppose a cost of $C$ if sample is taken.
 
 
 ### Inference 

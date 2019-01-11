@@ -32,10 +32,10 @@ The outcome ![X = \\begin{cases} \\text{presence of a certain formation} \\\\ \\
 |--------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
 |                                                                    | .6                                                                        | .4                                                                        |
 
-| ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![a](https://latex.codecogs.com/png.latex?a "a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1")   | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2") |
-|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------|
-| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | C ![-](https://latex.codecogs.com/png.latex?- "-") 5000   | C ![+](https://latex.codecogs.com/png.latex?%2B "+") 0  |
-| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | C ![+](https://latex.codecogs.com/png.latex?%2B "+") 2000 | C ![-](https://latex.codecogs.com/png.latex?- "-") 500  |
+| ![\\theta](https://latex.codecogs.com/png.latex?%5Ctheta "\theta") \\ ![a](https://latex.codecogs.com/png.latex?a "a") | ![a\_1](https://latex.codecogs.com/png.latex?a_1 "a_1")                     | ![a\_2](https://latex.codecogs.com/png.latex?a_2 "a_2")                |
+|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------|
+| ![\\theta\_1](https://latex.codecogs.com/png.latex?%5Ctheta_1 "\theta_1")                                              | ![C - 5000](https://latex.codecogs.com/png.latex?C%20-%205000 "C - 5000")   | ![C + 0](https://latex.codecogs.com/png.latex?C%20%2B%200 "C + 0")     |
+| ![\\theta\_2](https://latex.codecogs.com/png.latex?%5Ctheta_2 "\theta_2")                                              | ![C + 2000](https://latex.codecogs.com/png.latex?C%20%2B%202000 "C + 2000") | ![C - 500](https://latex.codecogs.com/png.latex?C%20-%20500 "C - 500") |
 
 ### Inference
 

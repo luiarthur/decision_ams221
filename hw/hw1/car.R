@@ -4,7 +4,7 @@ f = function(n, x) {
 
   a = (-50 * n + 700) * p_nx + (-50 * n + 800) * (1-p_nx)
   b = (-50 * n + 0) * p_nx + (-50 * n + 1000) * (1-p_nx)
-  cat('n: ', n, ', x: ', x, ', a: ', a, ', b: ', b, '\n', sep='')
+  cat('n: ', n, ', x: ', x, ', a: ', a, ', b: ', b, ', p_snx: ', p_snx, '\n', sep='')
   max(a, b) * p_snx
 }
 

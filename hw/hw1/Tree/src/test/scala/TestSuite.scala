@@ -2,6 +2,7 @@ import org.scalatest.FunSuite
 
 class TestSuite extends FunSuite {
   import Tree.TreeStuff._
+  import java.io._
 
   test("doctor") {
     val die = End(20, "die", 0.8)
@@ -10,11 +11,11 @@ class TestSuite extends FunSuite {
 
     val noEffect = Node(30, "no effect", .5, die, live)
     val cure = End(70, "cure", .5)
-    val type1 = Node(30, "Type I", .4, noEffect, cure)
+    val type1 = Node(50, "Type I", .4, noEffect, cure)
     val type2 = Node(30, "Type II", .6, die, live)
     val surviveDrug = Node(38, "survive drug", .8, type1, type2)
     val dieDrug = End(20, "die", .2)
-    val drug = Node(34.4, "Drug", -1, die, surviveDrug)
+    val drug = Node(34.4, "Drug", -1, dieDrug, surviveDrug)
 
     val noEffectT1 = Node(30, "no effect", .2, die, live)
     val cureT1 = End(70, "cure", .8)
@@ -27,6 +28,21 @@ class TestSuite extends FunSuite {
     val operate = Node(36.2, "Operate", -1, dieOp, surviveOp)
 
     val root = Node(36.2, "", -1, notTreat, drug, operate)
-    println(root)
+    //println(root)
+
+    // Print results
+    val pw = new PrintWriter(new File("../results/doctor.txt" ))
+    pw.write(root.toString)
+    pw.close
   }
+
+  test("R&D") {
+    // val root = Node(36.2, "", -1, notTreat, drug, operate)
+
+    // Print results
+    // val pw = new PrintWriter(new File("../results/r_and_d.txt" ))
+    // pw.write(root.toString)
+    // pw.close
+  }
+
 }

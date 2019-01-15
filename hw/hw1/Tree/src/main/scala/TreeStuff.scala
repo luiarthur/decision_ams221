@@ -35,7 +35,7 @@ object TreeStuff {
     override def toString(): String = {
       val posterity = children.size match {
         case 0 => ""
-        case _ => "\n" + children.map(_.toString).mkString("\n")
+        case _ => "\n" + children.map(_.toString).mkString("\n\n")
       }
 
       val head = if (isRoot) {
@@ -44,7 +44,7 @@ object TreeStuff {
         val p = if (isChanceNode) s"($prob)" else ""
         s"--- $nodeType $name $p --- ${value.toString}"
       }
-      head + "\n" + prepend(posterity, head.size, children.size) + "\n\n"
+      head + "\n" + prepend(posterity, head.size, children.size) + "\n"
     }
   }
 }

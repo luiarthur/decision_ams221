@@ -1,0 +1,18 @@
+\documentclass{article}[12pt]
+\usepackage[margin=0.5in]{geometry}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\pagenumbering{gobble}
+\newcommand{\shrink}[2]{\scalebox{#2}{\parbox{\textwidth}{\verbatiminput{#1}}}}
+
+\begin{document}
+%\scalebox{0.5}{\parbox{2.0\textwidth}{\verbatiminput{results/doctor.txt}}}
+\section{Patients}
+\shrink{results/doctor.txt}{.75}  \newpage
+
+\section{Prune Juice}
+\shrink{results/prunejuice.txt}{.8} \newpage
+
+\section{Machines}
+\shrink{results/machine.txt}{.6} \newpage
+\end{document}

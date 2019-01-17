@@ -30,20 +30,29 @@ object TreeStuff {
   case class Node[T](value:T, name:String, prob:Double, children: Tree[T]*) extends NodeBase[T] {
     lazy val isRoot = prob < 0 && name.size == 0
     lazy val isChanceNode = prob >= 0
+    lazy val isEndNode = children.size == 0
 
     override def toString(): String = {
       val posterity = children.size match {
         case 0 => ""
-        case _ => "\n" + children.map(_.toString).mkString("\n\n")
+        case _ => children.map(_.toString).mkString("\n")
       }
 
-      val head = if (isRoot) {
-        s"${value.toString}"
-      } else {
-        val p = if (isChanceNode) s" ($prob) " else ""
-        s"--- $name$p: ${value.toString}"
+      val head = (isRoot, isChanceNode, isEndNode) match {
+        // Root node
+        case (true, _, _) => s"D: ${value.toString}"
+        // End node
+        case (_, _, true) => s"--- $name ($prob): ${value.toString}"
+        // Chance node
+        case (_, true, _) => s"--- C: $name ($prob): ${value.toString}"
+        // Decision node
+        case (_, false, _) => s"--- D: $name: ${value.toString}"
       }
-      head + "\n" + prepend(posterity, head.size, children.size) + "\n"
+
+      isEndNode match {
+        case true => head + "\n"
+        case _ => head + "\n" + prepend(posterity, head.size, children.size) + "\n"
+      }
     }
   }
 }

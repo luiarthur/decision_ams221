@@ -1,11 +1,15 @@
 \documentclass{article}[12pt]
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=.7in]{geometry}
 \usepackage{verbatim}
 \usepackage{graphicx}
 \pagenumbering{gobble}
 \newcommand{\shrink}[2]{\scalebox{#2}{\parbox{\textwidth}{\verbatiminput{#1}}}}
+\author{Arthur Lui}
+\title{Decision Theory -- HW 1}
 
 \begin{document}
+\maketitle
+
 %\scalebox{0.5}{\parbox{2.0\textwidth}{\verbatiminput{results/doctor.txt}}}
 \section{Patients}
 \shrink{results/doctor.txt}{.75}  \newpage
@@ -14,5 +18,5 @@
 \shrink{results/prunejuice.txt}{.8} \newpage
 
 \section{Machines}
-\shrink{results/machine.txt}{.6} \newpage
+\shrink{results/machine.txt}{.8} \newpage
 \end{document}

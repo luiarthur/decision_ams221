@@ -52,10 +52,10 @@ object Doctor extends App {
     // Gen Leaf nodes
     val nodes = List.tabulate(scanners + 1){ x =>
       val pxn = pFaultyGivenXAlarams(x)
-      val fixFaultyNode = End(payoff("fix", "faulty"), "faulty", roundAt(pxn, 2))
-      val fixNonfaultyNode = End(payoff("fix", "not faulty"), "not faulty", roundAt(1 - pxn, 2))
-      val notfixFaultyNode = End(payoff("not fix", "faulty"), "faulty", roundAt(pxn, 2))
-      val notfixNonfaultyNode = End(payoff("not fix", "not faulty"), "not faulty", roundAt(1 - pxn, 2))
+      val fixFaultyNode = Node(payoff("fix", "faulty"), "faulty", roundAt(pxn, 2))
+      val fixNonfaultyNode = Node(payoff("fix", "not faulty"), "not faulty", roundAt(1 - pxn, 2))
+      val notfixFaultyNode = Node(payoff("not fix", "faulty"), "faulty", roundAt(pxn, 2))
+      val notfixNonfaultyNode = Node(payoff("not fix", "not faulty"), "not faulty", roundAt(1 - pxn, 2))
       val fixEV = roundAt(pxn * payoff("fix", "faulty") + (1 - pxn) * payoff("fix", "not faulty"), 2)
       val notfixEV = roundAt(pxn * payoff("not fix", "faulty") + (1 - pxn) * payoff("not fix", "not faulty"), 2)
       val fixNode = Node(fixEV, "fix" , -1, fixFaultyNode, fixNonfaultyNode)
@@ -70,12 +70,12 @@ object Doctor extends App {
   }
 
   val fix = Node(780, "fix", .2, 
-    End(700, "faulty", .2),
-    End(800, "not faulty", .8))
+    Node(700, "faulty", .2),
+    Node(800, "not faulty", .8))
 
   val notFix = Node(800, "not fix", .2, 
-    End(0, "faulty", .2),
-    End(1000, "not faulty", .8))
+    Node(0, "faulty", .2),
+    Node(1000, "not faulty", .8))
 
   val (nodes1, ev1) = genNodes(1)
   val oneScanner = Node(roundAt(ev1, 2), "one scanner", -1, nodes1:_*)
@@ -87,7 +87,7 @@ object Doctor extends App {
 
   // Print results
   val pw = new PrintWriter(new File("results/machine.txt" ))
-  pw.write("Machine: \n\n")
+  // pw.write("Machine: \n\n")
   pw.write(root.toString)
   pw.close()
 }

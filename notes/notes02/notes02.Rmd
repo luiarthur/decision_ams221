@@ -172,3 +172,24 @@ Assumptions:
 1. The odds are fair. The bookmaker is willing to both sell and buy any bets.
 2. There is no restriction in the number of bets that can be placed. And they
    are all equally valuable.
+
+**Theorem**: Under assumptions 1 and 2 (above), a necessary condition for a set of prices to be coherent is that they satisfy Kolmogorov axioms.
+
+- Axiom 1: $0 \le \pi_\theta \le 1, ~ \forall \theta$
+- Axiom 2: $0 \pi_\Theta = 1$ where $\Theta$ is the sure event
+- Axiom 3: If $\theta_!$ and $\theta_2$ are such that $\theta_1\theta_2 = 0$,
+  then $\pi_{\theta_1} + \pi_{\theta_2} = \pi_{\theta_1 + \theta_2}$
+
+**Proof**: See Parmigiani & Inoue p.19
+
+## Coherent Conditional Probabilities
+
+See Parmigiani & Inoue p.20 - 21
+
+# Utility (Chapter 3)
+
+- St. Peterburg Paradox
+    - How do we value payoffs that are subject to uncertainty What is the fair
+      price of a bet? The answer to that question is expected utility.
+          - fair value `<->` expected utility
+

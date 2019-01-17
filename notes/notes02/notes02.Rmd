@@ -67,7 +67,9 @@ The decision maker has three choices to start with.
 2. sell
 3. take the sample
 
-INSERT GRAPH 1
+![](img/img1.jpg){ width=500px }
+
+![](img/img2.jpg){ width=500px }
 
 $$\begin{split}
 \Pr(X=1)&=\Pr(X=1\mid\theta_1) \Pr(\theta_1) + \Pr(X=1\mid\theta_2) \Pr(\theta_2)= (.8)(.6) + (.3)(.4) = .6 \\
@@ -122,7 +124,7 @@ We consider three aspects of the problem. Utilities in parenthesis. $U \ge 0$.
     - yes (0)
     - no (+10)
 
-INSERT TREE HERE!
+![](img/img4.jpg){ width=500px }
 
 ## Elements of a Decision Problem
 
@@ -134,7 +136,7 @@ INSERT TREE HERE!
 
 The complete scheme looks like:
 
-INSERT GRAPH HERE
+![](img/img3.jpg){ width=500px }
 
 ## Bets
 

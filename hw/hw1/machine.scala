@@ -60,7 +60,7 @@ object Doctor extends App {
       val notfixEV = roundAt(pxn * payoff("not fix", "faulty") + (1 - pxn) * payoff("not fix", "not faulty"), 2)
       val fixNode = Node(fixEV, "fix" , -1, fixFaultyNode, fixNonfaultyNode)
       val notfixNode = Node(notfixEV, "not fix" , -1, notfixFaultyNode, notfixNonfaultyNode)
-      val root = Node(max(fixEV, notfixEV), s"${x} / ${n} alarms", roundAt(pXAlarms(x), 2), fixNode, notfixNode)
+      val root = Node(max(fixEV, notfixEV), s"${x}/${n} alarms", roundAt(pXAlarms(x), 2), fixNode, notfixNode)
       root
     }
 
@@ -69,19 +69,19 @@ object Doctor extends App {
     (nodes, ev)
   }
 
-  val fix = Node(780, "fix", .2, 
+  val fix = Node(780, "fix", 1, 
     Node(700, "faulty", .2),
     Node(800, "not faulty", .8))
 
-  val notFix = Node(800, "not fix", .2, 
+  val notFix = Node(800, "not fix", 1, 
     Node(0, "faulty", .2),
     Node(1000, "not faulty", .8))
 
   val (nodes1, ev1) = genNodes(1)
-  val oneScanner = Node(roundAt(ev1, 2), "one scanner", -1, nodes1:_*)
+  val oneScanner = Node(roundAt(ev1, 2), "one scanner", 1, nodes1:_*)
 
   val (nodes2, ev2) = genNodes(2)
-  val twoScanners = Node(roundAt(ev2, 2), "two scanner", -1, nodes2:_*)
+  val twoScanners = Node(roundAt(ev2, 2), "two scanner", 1, nodes2:_*)
 
   val root = Node(List(ev1, ev2, 800, 780).max, "", -1, fix, notFix, oneScanner, twoScanners)
 

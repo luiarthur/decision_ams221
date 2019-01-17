@@ -3,56 +3,88 @@ package Tree
 import scala.math
 
 object TreeStuff {
-  trait Tree[+T]
-
-  trait NodeBase[T] extends Tree[T] {
-    def value: T
-    def name: String
-    override def toString(): String = value.toString
+  trait Tree {
+    val value: Double 
+    val name: String
+    val prob: Double
+    def isRoot: Boolean
+    def isChanceNode: Boolean
+    def isDecisionNode: Boolean
+    def isEndNode: Boolean
+    var parent: Any = 0
+    var prepend: String = ""
+    var postpend: String = ""
   }
 
-
-  def prepend(s:String, spaces:Int, numChildren:Int) = {
+  def indent(s:String, spaces:Int, numChildren:Int) = {
     val lines = s.split("\n")
-    val lastLineToPipe = lines.map(_.take(3) == "---").zipWithIndex.filter(_._1).map(_._2).last + 1
+    val lastLineToPipe = lines.map(_.take(2) == "--").zipWithIndex.filter(_._1).map(_._2).last + 1
     def pipe(n:Int) = n < lastLineToPipe
     def sym(n:Int) = if (pipe(n)) "|" else " "
     Vector.tabulate(lines.size)(n => " " * (spaces - 1) + sym(n) + lines(n)).mkString("\n")
   }
 
-
-  case class End[T](value:T, name:String, prob:Double) extends NodeBase[T] {
-    override def toString(): String = {
-      s"--- $name ($prob): " + value.toString
-    }
-  }
-
-  case class Node[T](value:T, name:String, prob:Double, children: Tree[T]*) extends NodeBase[T] {
+  case class Node(value:Double, name:String, prob:Double, children: Tree*) extends Tree {
     lazy val isRoot = prob < 0 && name.size == 0
-    lazy val isChanceNode = prob >= 0
     lazy val isEndNode = children.size == 0
+    lazy val isChanceNode = !isEndNode && children.exists(_.prob > 0)
+    lazy val isDecisionNode = isRoot || !isChanceNode
+    parent = this
+    children.foreach{
+      _.parent = this
+    }
 
     override def toString(): String = {
-      val posterity = children.size match {
-        case 0 => ""
-        case _ => children.map(_.toString).mkString("\n")
+      val posterity = isEndNode match {
+        case true => ""
+        case false => children.map(_.toString).mkString("\n")
       }
 
-      val head = (isRoot, isChanceNode, isEndNode) match {
+      val note = if (0 < prob && prob < 1) s"$name ($prob)" else name
+
+      var head = (isRoot, isChanceNode, isEndNode) match {
         // Root node
-        case (true, _, _) => s"D: ${value.toString}"
+        case (true, _, _) => ""
         // End node
-        case (_, _, true) => s"--- $name ($prob): ${value.toString}"
+        case (_, _, true) => s"--$note--: "
         // Chance node
-        case (_, true, _) => s"--- C: $name ($prob): ${value.toString}"
+        case (_, true, _) => s"--$note--C: "
         // Decision node
-        case (_, false, _) => s"--- D: $name: ${value.toString}"
+        case (_, false, _) =>  s"--$note--D: "
+      }
+      head += prepend + value.toString + postpend
+
+      val pT = parent.asInstanceOf[this.type]
+      if (pT.isDecisionNode && !this.isRoot) {
+        val siblings = pT.children
+        val notBestBranch= siblings.map(_.value).max > value
+        if (notBestBranch) {
+          head = "--//" + head
+        }
       }
 
       isEndNode match {
         case true => head + "\n"
-        case _ => head + "\n" + prepend(posterity, head.size, children.size) + "\n"
+        case _ => head + "\n" + indent(posterity, head.size, children.size) + "\n"
       }
+    }
+  }
+
+  object Node {
+    def apply(value:Double, children: Tree*) = {
+      new Node(value, "", -1, children:_*)
+    }
+
+    def apply(value:Double, name:String, children: Tree*) = {
+      new Node(value, name, -1, children:_*)
+    }
+
+    def apply(value:Double, name:String, prob:Double, prepend:String, postpend:String,
+              children: Tree*) = {
+      val n = new Node(value, name, prob, children:_*)
+      n.prepend = prepend
+      n.postpend = postpend
+      n
     }
   }
 }

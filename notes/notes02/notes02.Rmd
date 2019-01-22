@@ -24,6 +24,9 @@ title: "Bayesian Decision Theory - Decision Trees, Coherence & Dynamic Programin
 \newcommand{\E}{ \text{E} }
 \newcommand{\A}{ \mathcal{A} }
 \newcommand{\X}{ \mathcal{X} }
+\newcommand{\tlt}{ \text{<} }
+\newcommand{\tgt}{ \text{>} }
+\newcommand{\lgp}[1]{ \tlt#1\tgt }
 
 # Decision Trees
 
@@ -195,3 +198,106 @@ See Parmigiani & Inoue p.20 - 21
       price of a bet? The answer to that question is expected utility.
           - fair value `<->` expected utility
 
+# Expected Utility Principle
+
+See Parmigiani & Inoue p.40
+
+- define a set of outcomes on rewards $Z$
+- define a set of states of the world $\Theta$
+- An action is a function mapping $\Theta$ to $Z$, $a: \Theta \rightarrow Z$
+- $\A$ is the set of all possible actions
+- we want to produce a function $U(z)$ that measures the utility of rewards $z$
+- probabilities of states of the world $\theta$ are distributions $\pi(\theta)$
+
+We can think of actions as probability distributions over rewards:
+$$p(z) = \int_{\theta: a(\theta)=z} \pi(\theta) d\theta$$
+
+The utility of an action is 
+$$u_{\pi}(a) = \int_\Theta u(a(\theta)) \pi(\theta)d\theta$$
+
+Assuming $z$ is finite,
+$$u_{\pi}(a) = \sum_{z\in Z} p(z) u(z)$$
+
+Our preferred action will be:
+$$a^*=\text{argmax}_a\bc{u_\pi(a)}$$
+
+Denote $\prec$ a binary preference that is such that $a \prec a'$ indicates that action
+$a'$ is preferred to action a strictly. $a \sim a'$ indicates indifference.
+$a\preceq a'$ indicates preferred or indifferent.
+
+We need two assumptions: 
+
+- completeness: for any two actions, $a, a' \in \A$, one and only one of the
+  following holds:
+    - $a \prec a'$ or $a \succ a'$ or $a \sim a'$. "I don't know" is not allowed.
+- Transitivity: for any $a, a', a'' \in \A$ , $a\preceq a'$ and $a' \preceq a''$ implies
+  $a \preceq a''$.
+
+Notation: $a, a' \in \A, \alpha \in \bk{0,1}, \text{ then } a'' = \alpha a +
+(1-\alpha) a'$, is the action that assigns probability $\alpha p(z) +
+(1-\alpha)p'(z)$.
+
+The Von-Neumann-Morgenstern theory requires the following conditions:
+
+1. $\prec$ is complete and transitive
+2. independence: $a, a', a'' \in \A$ and $\alpha \in \bk{0,1}$, $a \succ a'
+   \Rightarrow (1-\alpha) a'' + \alpha a \succ (1-\alpha) a'' + \alpha a'$.
+3. Archimedean: $a, a', a'' \in \A$. For $a\succ a' \succ a''$, there exists
+  $\alpha, \beta \in(0,1)$ such that $\alpha a + (1-\alpha) a'' \succ a' \succ
+  \beta a + (1-\beta)a''$
+
+See Theorem 3.1 in Parmigiani & Inoue
+
+The result indicates that our preferences for actions can be translated into an 
+ordering of expected utilities.
+
+How do we come up with such a function?
+
+Denote $\tlt z \tgt$ the probability distribution that gives probability one to
+reward $z$.
+
+- step 1: choose two rewards that are NOT equivalent, say $z_1$ and $z_2$.
+  Assume $\lgp{z_1} \prec \lgp{z_2}$. $u(z_1) = 0, u(z_2)=1$.
+- step 2: For reward $z_3$ that is such that $\tlt z_1 \tgt \prec \tlt z_3 \tgt
+  \prec \tlt z_2 \tgt$
+      - Find $\alpha \in (0,1)$ such that $\tlt z_3 \tgt \approx \alpha \tlt z_1 \tgt + (1-\alpha) \lgp{z_2}$ then $u(z_3) = \alpha u(z_1) + (1-\alpha) u(z_2) = 1 - \alpha$.
+- step 3: For a reward $\lgp{z_4}$ such that $\lgp{z_1} \succ \lgp{z_4}$. Find $\alpha$
+  such that $$\lgp{z_1} \approx \alpha \lgp{z_4} + (1-\alpha) \lgp{z_2}$$
+  $$0 = u(z_1) = \alpha(z_4) + (1-\alpha) \Rightarrow u(z_4) = - (1-\alpha) / \alpha$$
+- step 4: $\lgp{z_2} \prec \lgp{z_5}$ ... $u(z_5) = 1 / (1-\alpha)$
+- step 5: consistency check: Find $\alpha$ such that $\lgp{z_5} = \alpha{}$ ...
+
+Example: Saturday afternoon you have the following choices. 
+
+- $a_1$: go to a football game
+- $a_2$: go to a movie
+
+Your preference is for $a_1$ but the weather might be bad.
+
+- $\theta_1$: bad weather. $\pi(\theta_1) = .4$.
+- $\theta_2$: good weather. $\pi(\theta_2) = .6$.
+
+You have four possible rewards. $z_1 = (a_1, \theta_1), z_2 = (a_1, \theta_2),
+z_3 = (a_2, \theta_1), z_4 = (a_2, \theta_2)$
+
+You have the following preferences: $\lgp{z_1} \prec \lgp{z_4} \prec \lgp{z_3}
+\prec \lgp{z_2}$
+
+$u(z_1) = 0, u(z_2)=1$.
+Compare $\lgp{z_4}$ to a mixture of $\lgp{z_1}$ and $\lgp{z_2}$, we get $\alpha
+= .4$, which implies that $u(z_4) = 0.6$.
+
+Now we set $\lgp{z_3} \approx 0.3 \lgp{z_1} + 0.7 \lgp{z_2}$, which implies that 
+$u(z_3) = .7$
+
+We check our assessments by looking at $\lgp{z_3} \approx \alpha \lgp{z_4} +
+(1-\alpha) \lgp{z_2}$. We get $\alpha = .6$, which is a contradiction because
+$u(z_3) = .7 = .6 \alpha + (1-\alpha) \Rightarrow \alpha = .75$
+
+We revise and conclude that $\lgp{z_3} \approx .25 \lgp{z_1} + .75\lgp{z_2}$
+which implies $u(z_3)=.75$
+
+- $a_1$: $E(u(z)) = \pi(\theta_1)u(z_1) + \pi(\theta_2)u(z_2) = .60$
+- $a_2$: $E(u(z)) = \pi(\theta_1)u(z_3) + \pi(\theta_2)u(z_4) = .66$
+
+Therefore, GO TO THE MOVIES!

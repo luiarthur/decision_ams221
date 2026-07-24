@@ -1,0 +1,29 @@
+Prune Juice: 
+
+6.6M
+   |
+   |--- Market Prunejuice (-1.0): 2M - 0 = 2M
+   |
+   |--- Market Pruneplus: 6.2M
+   |                         |
+   |                         |--- Successful R&D of Pruneplus (0.9): 10M - 3M = 7M
+   |                         |
+   |                         |--- Failed R&D of Pruneplus (0.1): 2M - 3M = -1M
+   |
+   |
+   |--- Market Superprune: 6.6M
+   |                          |
+   |                          |--- Successful R&D of Superprune (0.6): 18M - 5M = 13M
+   |                          |
+   |                          |--- Failed R&D of Superprune (0.4): 2M - 5M = -3M
+   |
+   |
+   |--- Market Pruneplus & Superprune: 6.48M
+                                           |
+                                           |--- Successful R&D of Pruneplus & Superprune (0.54): 18M - 8M = 10M
+                                           |
+                                           |--- Successful R&D of Pruneplus but not Superprune (0.36): 10M - 8M = 2
+                                           |
+                                           |--- Successful R&D of Superprune & Pruneplus (0.06): 18M - 8M = 10M
+                                           |
+                                           |--- Failed R&D of Pruneplus & Superprune (0.04): 10M - 8M = 2
